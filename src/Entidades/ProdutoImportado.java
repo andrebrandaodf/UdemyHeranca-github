@@ -19,8 +19,8 @@ public class ProdutoImportado extends Produto{
 		public void setTaxaAlfandega(float taxaAlfandega) {
 			this.taxaAlfandega = taxaAlfandega;
 		}
-		
-		public double precoTotal() {
+
+		public float precoTotal() {
 			return super.getPreco() + this.taxaAlfandega;
 		}
 }
