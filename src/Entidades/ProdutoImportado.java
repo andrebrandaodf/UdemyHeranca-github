@@ -2,25 +2,34 @@ package Entidades;
 
 public class ProdutoImportado extends Produto{
 
-		private float taxaAlfandega;
+		private Double taxaAlfandega;
 		
 		public ProdutoImportado() {
 			super();
 		}
 		
-		public ProdutoImportado(String nome, float preco, float taxaAlfandega) {
+		public ProdutoImportado(String nome, Double preco, Double taxaAlfandega) {
 			super(nome, preco);
 			this.taxaAlfandega = taxaAlfandega;
 		}
 		
-		public float getTaxaAlfandega() {
+		public Double getTaxaAlfandega() {
 			return taxaAlfandega;
 		}
-		public void setTaxaAlfandega(float taxaAlfandega) {
+		public void setTaxaAlfandega(Double taxaAlfandega) {
 			this.taxaAlfandega = taxaAlfandega;
 		}
 
-		public float precoTotal() {
-			return super.getPreco() + this.taxaAlfandega;
+		public Double precoTotal() {
+			return getPreco() + taxaAlfandega;
 		}
+		
+		@Override
+		public String etiquetaDePreco() {
+			return getNome()
+					+ " R$ " 
+					+ String.format("%.2f", precoTotal())
+					+ "( Taxas:  R$ "
+					+ String.format("%.2f", taxaAlfandega) + ")";
+			}
 }

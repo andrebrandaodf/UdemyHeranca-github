@@ -2,14 +2,14 @@ package Entidades;
 
 public class Produto {
 
-	private String nome;
-	private float  preco;
+	private String  nome;
+	private Double  preco;
 	
 	public Produto(){
 		
 	}
 	
-	public Produto(String nome, float preco) {
+	public Produto(String nome, Double preco) {
 		this.nome  = nome;
 		this.preco = preco;
 	}
@@ -20,15 +20,16 @@ public class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public float getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
-	public void setPreco(float preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 	
-	public String etiqueDePreco() {
-		return "Produto: "+this.nome+
-				"R$ "+this.preco;
+	public String etiquetaDePreco() {
+		return nome 
+				+ " R$ "
+				+ String.format("%.2f", preco);
 	}
 }

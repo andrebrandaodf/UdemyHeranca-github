@@ -30,7 +30,7 @@ public class Empresa {
 			int horas = teclado.nextInt();
 			System.out.print("Valor por Hora R$");
 			double valorPorHora = teclado.nextDouble();
-
+ 
 			if (ch == 'S') {
 				System.out.print("Adicional: ");
 				double adicional = teclado.nextDouble();
