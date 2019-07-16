@@ -50,12 +50,18 @@ public class CasasBahia {
 				list.add(new ProdutoImportado(nome, preco, taxaAlfandega));
 			}
 
-			System.out.println();
-			System.out.println("|            Etiqueta de preços            |");
-			for (Produto prod : list) {
-				System.out.println(prod.etiquetaDePreco());
-			}
+		}
 
+		System.out.println();
+		System.out.println("|            Etiqueta de preços            |");
+		for (Produto prod : list) {
+			System.out.println(prod.etiquetaDePreco());
+		}
+
+		double soma = 0.0;
+		for (Produto prod : list) {
+			soma += prod.getPreco();
+			System.out.print(" Valor total da compra R$ " +soma);
 		}
 
 		tc.close();
