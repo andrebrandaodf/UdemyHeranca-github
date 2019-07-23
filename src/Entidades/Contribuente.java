@@ -30,5 +30,5 @@ public abstract class Contribuente {
 		this.rendimentoAnual = rendimentoAnual;
 	}
 	
-	public abstract void taxa();
+	public abstract double taxa();
 }
